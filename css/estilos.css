@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #fcfcfc;
+}
+
+/*Menú de navegación*/
+
+.logo img{
+    top: 5px;
+}
+
+nav{
+    display: flex;
+    height: 110px;
+    width: 100%;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+}
+
+nav .logo{
+    color: #fcfcfc;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+ul li{
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: #5534A5;;
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+ul li a:hover{
+    color: #fff;
+    background: #5534A5;
+}
+
+nav .menu-btn i{
+    color: #5534A5;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+/*Menú de navegación Responsive*/
+@media (max-width: 1000px){
+    nav{
+        padding: 0 40px 0 50px;
+        }
+}
+
+@media (max-width: 920px) {
+    nav .menu-btn i{
+        display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    nav ul{
+        position: fixed;
+        top: 110px;
+        left: -100%;
+        background: #DADCF0;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+        z-index: 4;
+    }
+    #click:checked ~ ul{
+        left: 0;
+    }
+    nav ul li{
+        width: 100%;
+        margin: 40px 0;
+    }
+    nav ul li a{
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked ~ ul li a{
+        margin-left: 0px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+        background: none;
+        color: #0d6efd;
+    }
+}
+
+/*Fuentes*/
+h2, h4{
+    font-family: 'Comfortaa', cursive;
+    color: #4f3e91;
+}
+
+.h1{
+    color: #4f3e91;
+}
+
+h5, h3{
+    color: #4f3e91;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h6, p {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+.box img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.container {
+	margin-top: 5%;
+}
+.card {
+    width: 100%;
+    height: 210px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    border: none;
+    background-color: inherit;
+}
+
+.card .box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    backface-visibility: hidden;
+}
+
+.card .box.front,
+.card .box.back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .box.front img {
+	object-fit: cover;
+	margin-bottom: 25px;
+}
+
+.card:hover .box.front {
+    transform: rotateY(180deg);
+}
+
+
+.card .box.back {
+    position: absolute;
+    background: #ccc;
+    transform: rotateY(180deg);
+    padding: 20px 30px;
+    text-align: center;
+    user-select: none;
+    border-radius: 10px;
+}
+
+.card:hover .box.back {
+    transform: rotateY(360deg);
+}
+
+@media(max-width: 991.5px) {
+    .col-lg-4 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+/*** Footer ***/
+.footer {
+    color: #afa7b4;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #A7A8B4;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #A7A8B4;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--light);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .btn.btn-square {
+    color: #A7A8B4;
+    border: 1px solid#A7A8B4;
+}
+
+.footer .btn.btn-square:hover {
+    color: var(--secondary);
+    border-color: var(--light);
+}
+
+.footer .copyright {
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--secondary);
+}
+
+.footer .copyright a:hover {
+    color: #FFFFFF;
+}
